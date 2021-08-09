@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 20vh;
 }
 
 .App-logo {
@@ -36,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form {
+  padding: 10rem 0rem 5rem 0rem;
 }
