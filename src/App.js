@@ -49,7 +49,7 @@ class App extends React.Component {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6">
-            News
+            Github Push CI
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
