@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
 import { firestore } from "./firebase"
+import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 class App extends React.Component {
-
+  
   
   state = {
     task:'',
@@ -29,11 +35,25 @@ class App extends React.Component {
     this.setState({ task: "", user: "" })
   }
 
+
   render() {
     const {task, user} = this.state;
-    
+
     return(
+      
       <Container maxWidth='sm' marginTop='auto' marginBottom='auto'>
+        
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6">
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
         <div className='App'>
                 <form onSubmit={this.addTask}>
                 <div style={{margin: '1rem'}}><TextField 
