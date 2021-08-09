@@ -9,6 +9,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Paper from '@material-ui/core/Paper';
 
 
 class App extends React.Component {
@@ -54,8 +55,10 @@ class App extends React.Component {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
+      
         <div className='App'>
-                <form onSubmit={this.addTask}>
+           <Paper elevation={3}>
+        <form onSubmit={this.addTask}>
                 <div style={{margin: '1rem'}}><TextField 
                   id="outlined-basic" 
                   label="Task" 
@@ -76,6 +79,7 @@ class App extends React.Component {
           <br />
                     <Button variant="contained" color="primary" type='submit'>Submit</Button>
                 </form>
+      </Paper>     
         </div>
       </Container>
     )
