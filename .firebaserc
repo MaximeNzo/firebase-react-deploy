@@ -1,5 +1,6 @@
 {
   "projects": {
-    "testing": "kpi-managment"
+    "testing": "kpi-managment",
+    "default": "kpi-managment"
   }
 }
