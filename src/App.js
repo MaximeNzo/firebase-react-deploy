@@ -42,7 +42,7 @@ class App extends React.Component {
 
     return(
       
-      <Container maxWidth='sm' marginTop='auto' marginBottom='auto'>
+      <Container maxWidth='md' marginTop='auto' marginBottom='auto'>
         
       <AppBar position="static">
         <Toolbar>
