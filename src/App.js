@@ -11,10 +11,12 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Paper from '@material-ui/core/Paper';
 import ComboBox from './components/combobox';
+import { GoogleLogin } from 'react-google-login';
+
 
 
 class App extends React.Component {
-  
+
   
   state = {
     task:'',
@@ -41,11 +43,24 @@ class App extends React.Component {
 
   render() {
     const {task, user} = this.state;
-
+    const responseGoogle = (response) => {
+      console.log(response);
+    }
     return(
       
       <Container maxWidth='md' marginTop='auto' marginBottom='auto'>
-        
+        <GoogleLogin
+  clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+  onSuccess={responseGoogle}
+  isSignedIn={true}
+/>
+        <GoogleLogin
+    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
