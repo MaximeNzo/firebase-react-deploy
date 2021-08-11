@@ -10,6 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Paper from '@material-ui/core/Paper';
+import ComboBox from './components/combobox';
 
 
 class App extends React.Component {
@@ -30,7 +31,8 @@ class App extends React.Component {
   
     firestore.collection("test").add({
       task: this.state.task,
-      user: this.state.user
+      user: this.state.user,
+      createdAt: new Date()
     })
   
     this.setState({ task: "", user: "" })
@@ -58,8 +60,11 @@ class App extends React.Component {
       
         <div className='App'>
            <Paper elevation={3}>
+            
         <form onSubmit={this.addTask}>
-                <div style={{margin: '1rem'}}><TextField 
+        <div className='combobox'></div>
+        
+                <div><ComboBox /><TextField 
                   id="outlined-basic" 
                   label="Task" 
                   variant="outlined" 
@@ -69,7 +74,7 @@ class App extends React.Component {
                 
                 
           <br />
-                <div style={{margin: '1rem'}}><TextField 
+                <div><TextField 
                   id="outlined-basic" 
                   label="User" 
                   variant="outlined" 
