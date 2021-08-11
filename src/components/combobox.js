@@ -3,8 +3,8 @@ import React, {useState,useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import {firestore} from '../firebase';
-//import Button from '@material-ui/core/Button';
-//import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 
@@ -37,13 +37,13 @@ export default function ComboBox() {
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Task" variant="outlined" />}
     />
+    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        {tasks.map(tache => 
+            <Button>{tache.task}</Button>
+        )}
+    </ButtonGroup>
 
     </div>
   );
 }
 
-//<ButtonGroup variant="contained" aria-label="outlined primary button group">
-//{tasks.map(tache => 
-//    <Button>{tache.task}</Button>
-//)}
-//</ButtonGroup>
