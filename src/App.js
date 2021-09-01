@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Paper from '@material-ui/core/Paper';
 import ComboBox from './components/combobox';
+import Skeleton from '@material-ui/lab/Skeleton';
+
 
 
 class App extends React.Component {
@@ -84,6 +86,9 @@ class App extends React.Component {
           <br />
                     <Button variant="contained" color="primary" type='submit'>Submit</Button>
                 </form>
+                <Skeleton variant="text" />
+      <Skeleton variant="circle" width={40} height={40} />
+      <Skeleton variant="rect" width={210} height={118} />
       </Paper>     
         </div>
       </Container>
